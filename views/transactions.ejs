@@ -1,0 +1,22 @@
+<%- include partials/header.ejs %>
+<%- include partials/navbar.ejs %>
+
+<div class="transaction-container">
+    <h1>Transaction List</h1>
+
+    <!-- Transaction Form -->
+    <form id="transaction-form">
+        <label for="transactionName">Transaction Name:</label>
+        <input type="text" id="transactionName" required>
+
+        <label for="transactionCost">Transaction Cost:</label>
+        <input type="number" id="transactionCost" required>
+
+        <button type="button" onclick="addTransaction()">Add Transaction</button>
+    </form>
+
+    <!-- Transaction List -->
+    <ul id="transaction-list"></ul>
+</div>
+
+<%- include partials/footer.ejs %>

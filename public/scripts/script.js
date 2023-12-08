@@ -24,3 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
         categoryForm.reset();
     });
 });
+
+function addTransaction() {
+    // Get values from the form
+    const transactionName = document.getElementById('transactionName').value;
+    const transactionCost = document.getElementById('transactionCost').value;
+
+    // Create a new list item
+    const transactionItem = document.createElement('li');
+    transactionItem.textContent = `${transactionName} - $${transactionCost}`;
+
+    // Append the new transaction to the list
+    document.getElementById('transaction-list').appendChild(transactionItem);
+
+    // Clear the form
+    document.getElementById('transaction-form').reset();
+}

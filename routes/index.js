@@ -28,6 +28,9 @@ router.get('/signin', function(req, res, next) {
 router.get('/categories', function(req, res, next) {
   res.render('categories', { title: 'Budget Categories' });
 });
+router.get('/transactions', function(req, res, next) {
+  res.render('transactions', { title: 'Transactions' });
+});
 
 module.exports = router;
 
