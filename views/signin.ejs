@@ -1,34 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Poppins:wght@200;600&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <div id="main">
-
-        <div id="navigation-bar">
-    
-            
-            <p><img></p>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="about">About</a></li>
-                    <li><a href="contact">Contact Us</a></li>
-                    <li><a href="product">Smart Spend Products</a></li>
-                    <li><a href="signin">Sign in</a></li>
-                </ul>
-            
-    
-        </div>
-        <hr class="thicker-hr">
-    
-        <p>Future implementation...</p>
-    </div>
+<%- include partials/header.ejs %>
 <%- include partials/navbar.ejs %>
+<div class="login-container">
+    <h1>Login</h1>
+
+    <!-- Login Form -->
+    <form id="login-form">
+        <label for="username">Username or Email:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Additional options (e.g., forgot password, register) -->
+    <div class="additional-options">
+        <a href="#">Forgot Password?</a>
+        <span>|</span>
+        <a href="#">Register</a>
+    </div>
+</div>
+<%- include partials/footer.ejs %>

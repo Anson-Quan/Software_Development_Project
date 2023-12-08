@@ -25,6 +25,9 @@ router.get('/product', function(req, res, next) {
 router.get('/signin', function(req, res, next) {
   res.render('signin', { title: 'Sign In' }); // You would need to create a 'signin' view template.
 });
+router.get('/categories', function(req, res, next) {
+  res.render('categories', { title: 'Budget Categories' });
+});
 
 module.exports = router;
-module.exports = router;
+

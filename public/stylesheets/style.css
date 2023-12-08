@@ -36,9 +36,6 @@ body {
   display: flex;
 
 }
-ul{
-  
-}
 #navigation-bar li {
   margin: 0 18px; /* Add some spacing between each navigation item */
 }
