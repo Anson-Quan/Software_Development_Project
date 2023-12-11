@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#navigation-bar {
+  margin: 0;
+  display: flex;
+  align-items: center; /* Vertically align items in the navigation bar */
+  justify-content: flex-start; /* To evenly space the navigation items */
+  background-color: rgb(245, 236, 228); /* Optional background color for the navigation bar */
+  padding: 10px; /* Optional padding for spacing */
+  margin-bottom: 0px;
+  border-style: inherit;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  padding-left: 50px;
+  border-bottom: 1px solid black; /* Add a solid black border at the bottom of the navigation bar */
+}
+
+#navigation-bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 20px;
+  display: flex;
+}
+
+#navigation-bar li {
+  margin: 0 18px; /* Add some spacing between each navigation item */
+}
+
+#navigation-bar a {
+  text-decoration: none;
+  color: black; /* Text color for the links */
+}
+
+#navigation-bar li:hover {
+  text-decoration: underline;
+  text-decoration-color: purple;
+  text-underline-offset: 5px;
+}
+
+#navigation-bar a {
+  text-underline-offset: 0.6em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+#navigation-bar a:hover {
+  text-decoration-color: purple;
+  text-underline-offset: 0.4em;
+  color: darkslategray; /* Change the text color on hover */
+}
+
+#navigation-bar a:active {
+  /* Add styles for the active state when a link is clicked */
+  color: darkorchid;
+}
+
+/* Add a style for the main content area, adjust as needed */
+#main-content {
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Add a style for a footer if you have one */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+}
