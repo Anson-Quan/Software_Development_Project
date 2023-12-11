@@ -1,12 +1,34 @@
 <%- include partials/header.ejs %>
 <%- include partials/navbar.ejs %>
-    <div id="main">
-    
-        <header class="bg-dark text-white text-center py-3">
-            <h1>Welcome to SmartSpend!</h1>
-        </header>
-        <p>Click <a href="signin">here</a> to sign in, or <a href="register">here</a> to register.</p>
-        <br>
-        <p>Click <a href="categories">here</a> to view your budget categories, or <a href="transactions">here</a> to add a transaction.</p>
-    </div>
+
+<div id="main">
+    <header class="bg-dark text-white text-center py-5">
+        <h1>Welcome to SmartSpend!</h1>
+        <p class="lead">Your Smart Financial Companion</p>
+    </header>
+
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-box p-4 mb-4">
+                    <h2>Track Your Budget</h2>
+                    <p>Effortlessly manage your finances with SmartSpend. Set budget categories and track your spending in real-time.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-box p-4 mb-4">
+                    <h2>Easy Transactions</h2>
+                    <p>Add transactions on the go. SmartSpend makes it simple to record your expenses and income, helping you stay organized.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center py-5">
+        <p class="lead">Ready to take control of your finances?</p>
+        <a href="signin" class="btn btn-primary btn-lg mx-2">Sign In</a>
+        <a href="register" class="btn btn-outline-primary btn-lg mx-2">Register</a>
+    </section>
+</div>
+
 <%- include partials/footer.ejs %>
