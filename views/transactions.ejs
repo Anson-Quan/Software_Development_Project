@@ -110,12 +110,10 @@
     transactions.push(newTransaction);
     localStorage.setItem('transactions', JSON.stringify(transactions));
 
-    // Provide a visual indication that the transaction was added
     alert('Transaction added successfully!');
   }
 
   function viewTransactionHistory() {
-    // Redirect to the Transaction History page
-    window.location.href = '/tranhistory'; // Update the URL based on your routing
+    window.location.href = '/tranhistory'; 
   }
 </script>
