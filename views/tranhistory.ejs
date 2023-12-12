@@ -1,0 +1,181 @@
+<%- include partials/header.ejs %>
+<%- include partials/navbar.ejs %>
+
+<style>
+  body {
+    padding-top: 56px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #495057;
+    margin: 0;
+  }
+
+  .navbar {
+    margin-bottom: 20px;
+  }
+
+  .container {
+    margin: 20px auto;
+    max-width: 600px;
+  }
+
+  .transaction-container {
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #495057;
+    font-size: 16px;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .table td {
+    background-color: #fff;
+  }
+
+  .table button {
+    margin-right: 5px;
+  }
+</style>
+
+<div class="container">
+  <div class="transaction-container">
+    <h1>Transaction History</h1>
+
+    <!-- Transaction Actions -->
+    <div class="transaction-actions form-inline mb-3">
+      <!-- Filter and other actions go here -->
+    </div>
+
+    <!-- Transaction List -->
+    <table class="table table-striped" id="transaction-list">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<%- include partials/footer.ejs %>
+
+<script>
+  function deleteTransaction(id) {
+    // Retrieve transactions from local storage
+    const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    // Find the index of the transaction with the given id
+    const index = transactions.findIndex(transaction => transaction.id === id);
+
+    if (index !== -1) {
+      // Remove the transaction from the array
+      transactions.splice(index, 1);
+      // Update the transactions in local storage
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+      // Update the transaction list
+      updateTransactionList(transactions);
+      console.log('Transaction deleted:', id);
+    } else {
+      console.log('Transaction not found:', id);
+    }
+  }
+
+  function filterTransactions() {
+    // Filter transactions logic goes here
+    console.log('Filter transactions');
+  }
+
+  function saveTransaction(id) {
+    // Save transaction logic goes here
+    console.log('Save transaction:', id);
+  }
+
+  function updateTransactionList(updatedTransactions = []) {
+    const transactionList = document.querySelector('#transaction-list tbody');
+    transactionList.innerHTML = '';
+
+    updatedTransactions.forEach(transaction => {
+      const row = transactionList.insertRow();
+
+      const cellDate = row.insertCell(0);
+      cellDate.textContent = transaction.date;
+
+      const cellCategory = row.insertCell(1);
+      cellCategory.textContent = transaction.category;
+
+      const cellDescription = row.insertCell(2);
+      cellDescription.textContent = transaction.description;
+
+      const cellAmount = row.insertCell(3);
+      cellAmount.textContent = `$${transaction.amount.toFixed(2)}`;
+
+      const cellActions = row.insertCell(4);
+      cellActions.innerHTML = `
+        <button class="btn btn-danger" onclick="deleteTransaction(${transaction.id})">Delete</button>
+        <button class="btn btn-success" onclick="saveTransaction(${transaction.id})" style="display:none;">Save</button>
+      `;
+    });
+  }
+
+  // Retrieve transactions from local storage
+  const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+  // Initial update of transaction list
+  updateTransactionList(transactions);
+</script>
+    
