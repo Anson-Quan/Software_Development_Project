@@ -1,16 +1,117 @@
 <%- include partials/header.ejs %>
 <%- include partials/navbar.ejs %>
-    <div id="main">
-        <div id="title-section">
-            <h1><%= title %></h1>
-            This is About page
-        
-        </div>
-        <div id="main-body"> 
-            <p>This is where the body will go for the about page</p>
-        </div>
-        <div id="footer-bar">
-            <p>This is where the footer will go</p>
+
+<style>
+    body {
+        background-color: #f8f9fa; 
+    }
+
+    .about-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px; 
+        background-color: #ffffff; 
+        border-radius: 12px; 
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    }
+
+    h2 {
+        text-align: center;
+        color: #343a40; 
+    }
+
+    p {
+        line-height: 1.6;
+        color: #495057; 
+    }
+
+    .team-section {
+        margin-top: 40px; 
+    }
+
+    .team-member {
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+</style>
+
+<div class="about-container">
+    <div class="container mt-5">
+        <h2 class="mb-4">About SmartSpend</h2>
+
+        <p>SmartSpend is a cutting-edge financial management application designed to empower individuals in taking control of their finances. Our goal is to provide a seamless and intuitive platform that simplifies budgeting, expense tracking, and financial goal planning.</p>
+
+        <p>Key Features:</p>
+        <ul>
+            <li>Effortlessly track your budget by setting up customizable categories.</li>
+            <li>Add transactions on the go, making it simple to record expenses and income.</li>
+            <li>Stay organized with real-time updates on your spending habits.</li>
+            <li>Set and achieve savings goals faster with our intuitive tools.</li>
+        </ul>
+
+        <p>Our Inspiration:</p>
+        <p>SmartSpend was inspired by the desire to provide users with a comprehensive financial tool that goes beyond basic budgeting. We understand the challenges individuals face in managing their money, and our application aims to address those challenges by offering a user-friendly experience with powerful features.</p>
+
+        <div class="team-section">
+            <h3 class="mb-3">Meet the Team</h3>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/image/farhan.jpg" alt="Muhammad Farhan Sohail" class="mb-3">
+                        <h4>Muhammad Farhan Sohail</h4>
+                        <p>Backend Developer</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/image/fawad1.jpg" alt="Fawad Mohammed Zaheer" class="mb-3">
+                        <h4>Fawad Mohammed Zaheer</h4>
+                        <p>Scrum Master</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/image/Prajwal.jpg" alt="Prajwal Purohit" class="mb-3">
+                        <h4>Prajwal Purohit</h4>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/image/Nanjin.jpg" alt="Nanjin Wang" class="mb-3">
+                        <h4>Nanjin Wang</h4>
+                        <p>UI/UX Designer</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/image/Jan Rodel.jpg" alt="Jan Rodel Escareses" class="mb-3">
+                        <h4>Jan Rodel Escareses</h4>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/image/Anson.jpg" alt="Thuan An Quan" class="mb-3">
+                        <h4>Thuan An Quan</h4>
+                        <p>Full Stack Developer</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
 <%- include partials/footer.ejs %>
