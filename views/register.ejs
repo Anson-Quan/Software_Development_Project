@@ -1,32 +1,67 @@
 <%- include partials/header.ejs %>
 <%- include partials/navbar.ejs %>
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .register-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }
+
+    h2 {
+        text-align: center;
+        color: #343a40; 
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    input {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+</style>
+
 <div class="register-container">
     <div class="container mt-5">
         <h2 class="mb-4">Register</h2>
 
-        <!-- Registration Form -->
+    
         <form>
-            <!-- Email Input -->
+
             <div class="form-group">
-                <label for="inputEmail">Email address</label>
+                <label for="inputEmail" class="form-label">Email address:</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" required>
             </div>
 
-            <!-- Password Input -->
+    
             <div class="form-group">
-                <label for="inputPassword">Password</label>
+                <label for="inputPassword" class="form-label">Password:</label>
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
             </div>
 
-            <!-- Confirm Password Input -->
+    
             <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
+                <label for="confirmPassword" class="form-label">Confirm Password:</label>
                 <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
             </div>
 
-            <!-- Register Button -->
-            <button type="submit" class="btn btn-primary">Register</button>
+            
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
         </form>
     </div>
 </div>
+
 <%- include partials/footer.ejs %>
