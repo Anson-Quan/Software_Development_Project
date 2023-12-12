@@ -4,7 +4,6 @@
   "engines": {
     "node": "18.x"
   },
-  "private": true,
   "scripts": {
     "start": "node server.js"
   },

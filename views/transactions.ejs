@@ -3,44 +3,34 @@
 
 <style>
   body {
-    padding-top: 56px;
-    font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
-    color: #495057;
-  }
-
-  .navbar {
-    margin-bottom: 20px;
-  }
-
-  .container {
-    margin-top: 20px;
-    margin-bottom: 20px;
   }
 
   .transaction-container {
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
-    margin: 0 auto;
+    background-color: #fff;
     border-radius: 10px;
-    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  form {
-    margin-bottom: 20px;
+  h1 {
+    text-align: center;
+    color: #343a40;
   }
 
   label {
-    font-weight: bold;
+    margin-top: 10px;
   }
 
   input,
   select,
   button {
+    margin-top: 5px;
+    margin-bottom: 15px;
     width: 100%;
     padding: 8px;
-    margin-bottom: 15px;
     border: 1px solid #ced4da;
     border-radius: 3px;
     background-color: #fff;
@@ -62,9 +52,9 @@
   }
 </style>
 
-<div class="container">
-  <div class="transaction-container">
-    <h1>Add Transaction</h1>
+<div class="transaction-container">
+  <div class="container mt-5">
+    <h2 class="mb-4">Add Transaction</h2>
 
     <!-- Transaction Form -->
     <form id="transaction-form" class="mb-3">
