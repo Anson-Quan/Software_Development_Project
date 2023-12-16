@@ -1,7 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+//var mongoose = require('mongoose');
+//var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -10,23 +10,23 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+//var PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB (make sure to replace the connection string with your MongoDB URI)
-mongoose.connect('mongodb://localhost:27017/software_project', { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connection.on('error', (error) => console.error('MongoDB connection error:', error));
-mongoose.connection.once('open', () => console.log('Connected to MongoDB'));
+//mongoose.connect('mongodb://localhost:27017/software_project', { useNewUrlParser: true, useUnifiedTopology: true });
+//mongoose.connection.on('error', (error) => console.error('MongoDB connection error:', error));
+//mongoose.connection.once('open', () => console.log('Connected to MongoDB'));
 
 // Define a User schema
-const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  password: { type: String, required: true },
-});
+//const userSchema = new mongoose.Schema({
+  //username: { type: String, required: true },
+  //password: { type: String, required: true },
+//});
 
-const User = mongoose.model('User', userSchema);
+//const User = mongoose.model('User', userSchema);
 
 // Middleware to parse JSON
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 // Route to handle user registration
 /*app.post('/register', async (req, res) => {
@@ -51,9 +51,9 @@ app.use(bodyParser.json());
 });*/
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+//app.listen(PORT, () => {
+  //console.log(`Server is running on http://localhost:${PORT}`);
+//});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
