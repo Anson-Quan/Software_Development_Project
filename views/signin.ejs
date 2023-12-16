@@ -15,7 +15,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     }
 
-    h1 {
+    h2 {
         text-align: center;
         color: #343a40; 
     }
@@ -38,29 +38,55 @@
     }
 </style>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Select the login form
+        const loginForm = document.getElementById("login-form");
+
+        // Add an event listener for form submission
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Hard-coded username and password for demonstration purposes
+            const hardcodedUsername = "team7";
+            const hardcodedPassword = "Password";
+
+            // Get the entered username and password from the form
+            const enteredUsername = document.getElementById("username").value;
+            const enteredPassword = document.getElementById("password").value;
+
+            // Check if the entered username and password match the hard-coded values
+            if (enteredUsername === hardcodedUsername && enteredPassword === hardcodedPassword) {
+                alert("Login successful!"); // Replace with your actual login logic
+                window.location.href = "/"; // Redirect to the index page
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+    });
+</script>
+
 <div class="login-container">
     <div class="container mt-5">
         <h2 class="mb-4">Login</h2>
 
-    
-    <form id="login-form">
-        <div class="mb-3">
-            <label for="username" class="form-label">Username or Email:</label>
-            <input type="text" id="username" name="username" class="form-control" required>
+        <form id="login-form">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username or Email:</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+
+        <div class="additional-options text-center">
+            <a href="register" class="btn btn-outline-primary btn-block">Register</a>
         </div>
-
-        <div class="mb-3">
-            <label for="password" class="form-label">Password:</label>
-            <input type="password" id="password" name="password" class="form-control" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
-    </form>
-
-    
-    <div class="additional-options text-center">
-        <a href="register" class="btn btn-outline-primary btn-block">Register</a>
-    </div>
     </div>
 </div>
 

@@ -10,14 +10,14 @@
         max-width: 400px;
         margin: 50px auto;
         padding: 20px;
-        background-color: #fff; 
-        border-radius: 10px; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
         text-align: center;
-        color: #343a40; 
+        color: #343a40;
     }
 
     label {
@@ -38,30 +38,54 @@
     <div class="container mt-5">
         <h2 class="mb-4">Register</h2>
 
-    
         <form>
-
             <div class="form-group">
                 <label for="inputEmail" class="form-label">Email address:</label>
                 <input type="email" class="form-control" id="inputEmail" placeholder="Enter email" required>
             </div>
 
-    
             <div class="form-group">
                 <label for="inputPassword" class="form-label">Password:</label>
                 <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
             </div>
 
-    
             <div class="form-group">
                 <label for="confirmPassword" class="form-label">Confirm Password:</label>
                 <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
             </div>
 
-            
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <button type="submit" class="btn btn-primary btn-block" onclick="registerUser()">Register</button>
         </form>
     </div>
 </div>
 
 <%- include partials/footer.ejs %>
+
+<script>
+    // Placeholder for user data (in-memory storage)
+    let users = [];
+
+    function registerUser() {
+        const email = document.getElementById('inputEmail').value;
+        const password = document.getElementById('inputPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+
+        // Create a user object (you may want to add more fields)
+        const user = {
+            email,
+            password,
+        };
+
+        // Add the user to the in-memory storage
+        users.push(user);
+
+        // Perform any other registration logic here
+
+        alert('User registered successfully');
+    }
+</script>

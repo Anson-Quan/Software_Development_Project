@@ -15,12 +15,6 @@ router.get('/about', function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Us' }); // You would need to create a 'contact' view template.
 });
-
-/* GET Products page. */
-router.get('/product', function(req, res, next) {
-  res.render('product', { title: 'Products' }); // You would need to create a 'products' view template.
-});
-
 /* GET Sign In page. */
 router.get('/signin', function(req, res, next) {
   res.render('signin', { title: 'Sign In' }); // You would need to create a 'signin' view template.

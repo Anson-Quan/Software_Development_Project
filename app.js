@@ -29,7 +29,7 @@ const User = mongoose.model('User', userSchema);
 app.use(bodyParser.json());
 
 // Route to handle user registration
-app.post('/register', async (req, res) => {
+/*app.post('/register', async (req, res) => {
   try {
     const { username, password } = req.body;
 
@@ -48,7 +48,7 @@ app.post('/register', async (req, res) => {
     console.error('Error during registration:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
-});
+});*/
 
 // Start the server
 app.listen(PORT, () => {
