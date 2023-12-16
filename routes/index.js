@@ -31,6 +31,9 @@ router.get('/transactions', function(req, res, next) {
 router.get('/tranhistory', function(req, res, next) {
   res.render('tranhistory', { title: 'Transaction History' });
 });
+router.get('/budget', function(req, res, next) {
+  res.render('budget', { title: 'Budgets' });
+});
 
 module.exports = router;
 

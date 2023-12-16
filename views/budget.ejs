@@ -1,0 +1,160 @@
+<!-- views/budgets.ejs -->
+
+<%- include partials/header.ejs %>
+<%- include partials/navbar.ejs %>
+
+<div class="container mt-5">
+  <h1 class="mb-4">Budget Overview</h1>
+
+  <!-- Income Section -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2 class="mb-0">Income</h2>
+    </div>
+    <div class="card-body">
+      <form id="income-form">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="incomeName">Income Name:</label>
+            <input type="text" id="incomeName" class="form-control" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="incomeAmount">Income Amount:</label>
+            <input type="number" id="incomeAmount" class="form-control" step="0.01" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="incomeFrequency">Income Frequency:</label>
+            <select id="incomeFrequency" class="form-control" required>
+              <option value="monthly">Monthly</option>
+              <option value="weekly">Weekly</option>
+              <!-- Add more frequency options as needed -->
+            </select>
+          </div>
+        </div>
+        <button type="button" onclick="addIncome()" class="btn btn-primary">Add Income</button>
+      </form>
+      <!-- Display income entries here -->
+      <ul id="income-list" class="list-group mt-3"></ul>
+    </div>
+  </div>
+
+  <!-- Expense Section -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h2 class="mb-0">Expenses</h2>
+    </div>
+    <div class="card-body">
+      <form id="expense-form">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="expenseName">Expense Name:</label>
+            <input type="text" id="expenseName" class="form-control" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="expenseAmount">Expense Amount:</label>
+            <input type="number" id="expenseAmount" class="form-control" step="0.01" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="expenseCategory">Expense Category:</label>
+            <select id="expenseCategory" class="form-control" required>
+              <option value="housing">Housing</option>
+              <option value="utilities">Utilities</option>
+              <option value="groceries">Groceries</option>
+              <!-- Add more expense categories as needed -->
+            </select>
+          </div>
+        </div>
+        <button type="button" onclick="addExpense()" class="btn btn-primary">Add Expense</button>
+      </form>
+      <!-- Display expense entries here -->
+      <ul id="expense-list" class="list-group mt-3"></ul>
+    </div>
+  </div>
+
+  <!-- Your other budget-related sections go here -->
+
+</div>
+
+<script>
+  // Dummy data for demonstration purposes
+  let incomeEntries = [];
+  let expenseEntries = [];
+
+  // Function to add income entry
+  function addIncome() {
+    const name = document.getElementById('incomeName').value;
+    const amount = parseFloat(document.getElementById('incomeAmount').value);
+    const frequency = document.getElementById('incomeFrequency').value;
+
+    // Validation (you may need to add more validation)
+    if (!name || isNaN(amount)) {
+      alert('Invalid input. Please fill in all fields with valid values.');
+      return;
+    }
+
+    // Add the new income entry to the list
+    incomeEntries.push({ name, amount, frequency });
+
+    // Update the income list
+    updateIncomeList();
+
+    // Clear the form fields
+    document.getElementById('income-form').reset();
+  }
+
+  // Function to update the income list
+  function updateIncomeList() {
+    const incomeList = document.getElementById('income-list');
+    incomeList.innerHTML = ''; // Clear the existing list
+
+    // Iterate through income entries and add them to the list
+    incomeEntries.forEach(income => {
+      const listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.textContent = `${income.name} - $${income.amount.toFixed(2)} (${income.frequency})`;
+      incomeList.appendChild(listItem);
+    });
+  }
+
+  // Function to add expense entry
+  function addExpense() {
+    const name = document.getElementById('expenseName').value;
+    const amount = parseFloat(document.getElementById('expenseAmount').value);
+    const category = document.getElementById('expenseCategory').value;
+
+    // Validation (you may need to add more validation)
+    if (!name || isNaN(amount)) {
+      alert('Invalid input. Please fill in all fields with valid values.');
+      return;
+    }
+
+    // Add the new expense entry to the list
+    expenseEntries.push({ name, amount, category });
+
+    // Update the expense list
+    updateExpenseList();
+
+    // Clear the form fields
+    document.getElementById('expense-form').reset();
+  }
+
+  // Function to update the expense list
+  function updateExpenseList() {
+    const expenseList = document.getElementById('expense-list');
+    expenseList.innerHTML = ''; // Clear the existing list
+
+    // Iterate through expense entries and add them to the list
+    expenseEntries.forEach(expense => {
+      const listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.textContent = `${expense.name} - $${expense.amount.toFixed(2)} (${expense.category})`;
+      expenseList.appendChild(listItem);
+    });
+  }
+
+  // Initial update of the income and expense lists
+  updateIncomeList();
+  updateExpenseList();
+</script>
+
+<%- include partials/footer.ejs %>
